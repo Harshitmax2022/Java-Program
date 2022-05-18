@@ -10,6 +10,7 @@ public class StudentDetails {
 		System.out.println("Name"+"="+name);
 		System.out.println("RollNo"+"="+rollNo);
 		System.out.println("Marks"+"="+marks);
+		System.out.println("                          ");
 	}
 	
 	public static void main(String[] argus) {
@@ -21,6 +22,15 @@ public class StudentDetails {
 		d1.marks=394;
 		
 		d1.displayStudentDetails(d1.rollNo,d1.name,d1.marks);
+		
+		StudentDetails d2=d1;
+		d2.rollNo=30;
+		d2.name="Rupesh";
+		d2.marks=559;
+		d2.displayStudentDetails(d2.rollNo,d2.name,d2.marks);
+		
+		d1=null;
+		d2=null;
 		
 	}
 }
