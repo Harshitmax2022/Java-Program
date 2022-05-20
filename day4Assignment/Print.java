@@ -22,7 +22,7 @@ public class Print {
 		Print d1=new Print();
 		
 		d1.check(5);
-		d1.check(68);
+		d1.check(55);
 		d1.check(-4);
 	}
 }
