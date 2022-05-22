@@ -1,7 +1,8 @@
 package question3;
 import java.util.Scanner;
 public class AccountDetails {
- 
+
+
 	// checkBalance i have take just to check ki user kitna balance fill kar rha 
 	// if balance is 0 or less than that why we need to invoke the withdrawn account method 
 	// so to stop than i used this so that withdrawn method not invoke unnecessary;
@@ -29,13 +30,14 @@ public Account getAccountDetails() {
 	// we have give a condition here like if enter balance is less than or equal to 0 then no go futher
 	System.out.println("Enter Balance");
 	int balance=scan.nextInt();
-	if(balance<=0) {
+	while(balance<=0) {
 		System.out.println("Balance should be positive");
-		this.checkBalance=-1;
+		System.out.println("Enter Balance");
+		 balance=scan.nextInt();
 		
-	}else {
-		account.setBalance(balance);
 	}
+		account.setBalance(balance);
+	
 	
 	
 	return account; 
@@ -46,19 +48,21 @@ public int getWithDrawAmmount() {
 	System.out.println("Enter the amount to be withdrawn");
 	int wiDraAmm=scan.nextInt();
 	
-	if(wiDraAmm>0) {
-		boolean result= account.withdraw(wiDraAmm);
-		if(result==true) {
-			return wiDraAmm;
-		}
-		else {
-			return 0;
-		}
+	while(wiDraAmm<=0) {
+		System.out.println("Amount should be positive");
+	
+		System.out.println("Enter the amount to be withdrawn");
+	 wiDraAmm=scan.nextInt();
+	
+	}
+     boolean result= account.withdraw(wiDraAmm);
+	if(result==true) {
+		return wiDraAmm;
 	}
 	else {
-	System.out.println("Amount should be positive");
-	return 0;
+		return 0;
 	}
+	
 	
 	
 	
@@ -71,17 +75,12 @@ public int getWithDrawAmmount() {
 		
 		
 	Account newData=accountDetails.getAccountDetails();
+	
+		System.out.println("");
 		
-	if(accountDetails.checkBalance<0) {
-		System.out.println("");
-		System.out.println("please fill data again");
-		System.out.println("**********************************");
-	}
-	else {
-		System.out.println("");
-		System.out.println("************************************************");
 		System.out.println("");
 		accountDetails.getWithDrawAmmount();
+		System.out.println("************************************************");
 	}
 		
 		
@@ -89,5 +88,5 @@ public int getWithDrawAmmount() {
 		
 		
 		
-}
+
 }
