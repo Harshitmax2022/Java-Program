@@ -8,5 +8,5 @@ public class CricketScore {
 	  
 	  public static void main(String[]argu) {
 		myMethod(3,5,6,20,4);
-	  }
+	  };
 }
