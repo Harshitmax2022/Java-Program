@@ -3,8 +3,6 @@ package question3;
 public class Main {
 
 	public int[] findAndReturnPrimeNumbers(int[] inputArray){
-		
-		
 		int[] res= new int[40];
 		
 		int k=0;
@@ -19,19 +17,10 @@ public class Main {
 			if(count==2) {
 				res[k++]=inputArray[i];
 			}
-			
-			
-			
-			
-			
 		}
 		
 		return res;
 		}
-	
-	
-	
-	
 		public static void main(String[] args){
 			
 			Main m1=new Main();
